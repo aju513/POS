@@ -19,10 +19,10 @@ const Brands = () => {
     order_by: "asc",
     search: "",
   });
-  const [categories, setCategories] = useState([]);
+  const [brands, setBrands] = useState([]);
   //modal category show
-  const [categoryShow, setCategoryShow] = useState(false);
-  const [categoryModalData, setCategoryModalData] = useState({});
+  const [brandShow, setBrandShow] = useState(false);
+  const [brandModalData, setBrandModalData] = useState({});
   //modal image show
   const [imageshow, setImageShow] = useState(false);
   const [modalPhoto, setModalPhoto] = useState("");
@@ -41,14 +41,14 @@ const Brands = () => {
   const getCategory = (pageNumber) => {
     axios
       .get(
-        `${Constants.BASE_URL}/category?page=${
+        `${Constants.BASE_URL}/brand?page=${
           pageNumber != undefined ? pageNumber.selected + 1 : ""
         }&search=${input.search}&order_by=${input.order_by}&pages=${
           input.pages
         }`
       )
       .then((res) => {
-        setCategories(res.data.data);
+        setBrands(res.data.data);
         setItemsCountPerPage(res.data.meta.per_page);
         setStartFrom(res.data.meta.from);
         setTotalItemsCount(res.data.meta.total);
@@ -61,8 +61,8 @@ const Brands = () => {
     setModalPhoto(photo);
   };
   const handleCategoryModalShowOrClose = (data) => {
-    setCategoryShow((e) => !e);
-    setCategoryModalData(data);
+    setBrandShow((e) => !e);
+    setBrandModalData(data);
   };
 
   const handleCategoryDelete = (id) => {
@@ -76,7 +76,7 @@ const Brands = () => {
   }, []);
   return (
     <>
-      <Breadcrumb title={"Category List"} />
+      <Breadcrumb title={"Brand List"} />
       <div className="row">
         <div className="col-md-12">
           <div className="card">
@@ -153,7 +153,7 @@ const Brands = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {categories.map((ele, index) => {
+                  {brands.map((ele, index) => {
                     return (
                       <tr>
                         <td>{startFrom + index}</td>
@@ -201,8 +201,8 @@ const Brands = () => {
                   />
                   <CategoryModal
                     handleClose={handleCategoryModalShowOrClose}
-                    show={categoryShow}
-                    data={categoryModalData}
+                    show={brandShow}
+                    data={brandModalData}
                   />
                 </tbody>
               </table>

@@ -42,7 +42,7 @@ const AddBrands = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post(`${Constants.BASE_URL}/brands`, input)
+      .post(`${Constants.BASE_URL}/brand`, input)
       .then((res) => {
         setLoading(false);
         Swal.fire({

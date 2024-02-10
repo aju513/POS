@@ -3,7 +3,14 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DistrictController;
+use App\Http\Controllers\Location\LocationStoreController;
+use App\Http\Controllers\MunicipalityController;
+use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\SubCategoryController;
+use App\Models\District;
+use App\Models\Municipality;
+use App\Models\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +30,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::get('/nepal_location', [LocationStoreController::class, 'index']);
+Route::get('/province', [ProvinceController::class, 'index']);
+Route::get('/district/{id}', [DistrictController::class, 'index']);
+Route::get('/municipality/{id}', [MunicipalityController::class, 'index']);
 Route::post('login', [AuthController::class, 'login']);
 Route::group(['middleware' => 'auth:sanctum'], static function () {
     Route::post('logout', [AuthController::class, 'logout']);

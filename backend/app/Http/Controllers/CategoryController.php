@@ -90,7 +90,10 @@ class CategoryController extends Controller
         $category_data = $request->except('photo', 'created_at');
         $category_data['slug'] = Str::slug($request->input('slug'));
 
-        if ($request->has('photo')) {
+        $url = filter_var($request['photo'], FILTER_SANITIZE_URL);
+
+        // Validate url
+        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
             $file = $request->input('photo');
             $width = 800;
             $height = 800;

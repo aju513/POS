@@ -40,7 +40,7 @@ const EditBrands = () => {
   };
   const getCategoryValue = () => {
     axios
-      .get(`${Constants.BASE_URL}/category/${params.id}`)
+      .get(`${Constants.BASE_URL}/brand/${params.id}`)
       .then((res) => {
         setInput(res.data.data);
         console.log(res.data.data);
@@ -52,12 +52,11 @@ const EditBrands = () => {
         }
       });
   };
-  const editCategoryOnClick = () => {
-    console.log("afdsd");
+  const editBrandOnClick = () => {
     axios
-      .put(`${Constants.BASE_URL}/category/${params.id}`, input)
+      .put(`${Constants.BASE_URL}/brand/${params.id}`, input)
       .then((res) => {
-        navigate("/category");
+        navigate("/brand");
       })
       .catch((err) => {
         console.log(err);
@@ -72,11 +71,11 @@ const EditBrands = () => {
   }, []);
   return (
     <>
-      <Breadcrumb title={"Edit Category"} />
+      <Breadcrumb title={"Edit Brand"} />
       <div className="row">
         <div className="col-md-12">
           <div className="card">
-            <CardHeader title={"Edit Category"} />
+            <CardHeader title={"Edit Brand"} />
             <div className="card-body">
               {/* name,slug,description,serial,photo,status */}
               <div className="row">
@@ -227,7 +226,7 @@ const EditBrands = () => {
                 <div className="col-md-6">
                   <button
                     className="btn btn-primary"
-                    onClick={editCategoryOnClick}
+                    onClick={editBrandOnClick}
                   >
                     Edit Category
                   </button>
