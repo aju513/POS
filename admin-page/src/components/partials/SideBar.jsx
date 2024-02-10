@@ -20,9 +20,9 @@ const SideBar = () => {
                 class="nav-link collapsed"
                 href="#"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseLayouts"
+                data-bs-target="#collapseCategory"
                 aria-expanded="false"
-                aria-controls="collapseLayouts"
+                aria-controls="collapseCategory"
               >
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-columns"></i>
@@ -34,7 +34,7 @@ const SideBar = () => {
               </a>
               <div
                 class="collapse"
-                id="collapseLayouts"
+                id="collapseCategory"
                 aria-labelledby="headingOne"
                 data-bs-parent="#sidenavAccordion"
               >
@@ -75,6 +75,37 @@ const SideBar = () => {
                   </Link>
                   <Link class="nav-link" to="/sub-category/create">
                     Add SubCategory
+                  </Link>
+                </nav>
+              </div>
+              <a
+                class="nav-link collapsed"
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseBrands"
+                aria-expanded="false"
+                aria-controls="collapseBrands"
+              >
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-columns"></i>
+                </div>
+                Brands
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
+              <div
+                class="collapse"
+                id="collapseBrands"
+                aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion"
+              >
+                <nav class="sb-sidenav-menu-nested nav">
+                  <Link class="nav-link" to="/brand">
+                    Show Brand
+                  </Link>
+                  <Link class="nav-link" to="/brand/create">
+                    Add Brand
                   </Link>
                 </nav>
               </div>
