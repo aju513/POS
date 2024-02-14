@@ -15,6 +15,9 @@ import EditSubCategory from "../ modules/subcategory/EditSubCategory";
 import AddBrands from "../ modules/brands/AddBrands";
 import Brands from "../ modules/brands/Brands";
 import EditBrands from "../ modules/brands/EditBrands";
+import AddSupplier from "../ modules/suppliers/AddSupplier";
+import SupplierList from "../ modules/suppliers/Supplier";
+import EditSupplier from "../ modules/suppliers/EditSupplier";
 const Projectrouter = createBrowserRouter([
   {
     path: "/",
@@ -60,6 +63,14 @@ const Projectrouter = createBrowserRouter([
       {
         path: "brand/edit/:id",
         element: <EditBrands />,
+      },
+      {
+        path: "supplier/",
+        children: [
+          { index: true, element: <SupplierList /> },
+          { path: "create", element: <AddSupplier /> },
+          { path: "edit/:id", element: <EditSupplier /> },
+        ],
       },
     ],
   },

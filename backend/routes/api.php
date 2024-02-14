@@ -8,6 +8,7 @@ use App\Http\Controllers\Location\LocationStoreController;
 use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\SupplierController;
 use App\Models\District;
 use App\Models\Municipality;
 use App\Models\Province;
@@ -41,4 +42,5 @@ Route::group(['middleware' => 'auth:sanctum'], static function () {
     Route::apiResource('category', CategoryController::class);
     Route::apiResource('subCategory', SubCategoryController::class);
     Route::apiResource('brand', BrandController::class);
+    Route::apiResource('supplier', SupplierController::class);
 });

@@ -113,110 +113,34 @@ const SideBar = () => {
                 class="nav-link collapsed"
                 href="#"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapsePages"
+                data-bs-target="#collapseSupplier"
                 aria-expanded="false"
-                aria-controls="collapsePages"
+                aria-controls="collapseSupplier"
               >
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-book-open"></i>
+                  <i class="fas fa-columns"></i>
                 </div>
-                Pages
+                Suppliers
                 <div class="sb-sidenav-collapse-arrow">
                   <i class="fas fa-angle-down"></i>
                 </div>
               </a>
               <div
                 class="collapse"
-                id="collapsePages"
-                aria-labelledby="headingTwo"
+                id="collapseSupplier"
+                aria-labelledby="headingOne"
                 data-bs-parent="#sidenavAccordion"
               >
-                <nav
-                  class="sb-sidenav-menu-nested nav accordion"
-                  id="sidenavAccordionPages"
-                >
-                  <a
-                    class="nav-link collapsed"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#pagesCollapseAuth"
-                    aria-expanded="false"
-                    aria-controls="pagesCollapseAuth"
-                  >
-                    Authentication
-                    <div class="sb-sidenav-collapse-arrow">
-                      <i class="fas fa-angle-down"></i>
-                    </div>
-                  </a>
-                  <div
-                    class="collapse"
-                    id="pagesCollapseAuth"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordionPages"
-                  >
-                    <nav class="sb-sidenav-menu-nested nav">
-                      <a class="nav-link" href="login.html">
-                        Login
-                      </a>
-                      <a class="nav-link" href="register.html">
-                        Register
-                      </a>
-                      <a class="nav-link" href="password.html">
-                        Forgot Password
-                      </a>
-                    </nav>
-                  </div>
-                  <a
-                    class="nav-link collapsed"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#pagesCollapseError"
-                    aria-expanded="false"
-                    aria-controls="pagesCollapseError"
-                  >
-                    Error
-                    <div class="sb-sidenav-collapse-arrow">
-                      <i class="fas fa-angle-down"></i>
-                    </div>
-                  </a>
-                  <div
-                    class="collapse"
-                    id="pagesCollapseError"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordionPages"
-                  >
-                    <nav class="sb-sidenav-menu-nested nav">
-                      <a class="nav-link" href="401.html">
-                        401 Page
-                      </a>
-                      <a class="nav-link" href="404.html">
-                        404 Page
-                      </a>
-                      <a class="nav-link" href="500.html">
-                        500 Page
-                      </a>
-                    </nav>
-                  </div>
+                <nav class="sb-sidenav-menu-nested nav">
+                  <Link class="nav-link" to="/supplier">
+                    Show Supplier
+                  </Link>
+                  <Link class="nav-link" to="/supplier/create">
+                    Add Supplier
+                  </Link>
                 </nav>
               </div>
-              <div class="sb-sidenav-menu-heading">Addons</div>
-              <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon">
-                  <i class="fas fa-chart-area"></i>
-                </div>
-                Charts
-              </a>
-              <a class="nav-link" href="tables.html">
-                <div class="sb-nav-link-icon">
-                  <i class="fas fa-table"></i>
-                </div>
-                Tables
-              </a>
             </div>
-          </div>
-          <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Start Bootstrap
           </div>
         </nav>
       </div>
